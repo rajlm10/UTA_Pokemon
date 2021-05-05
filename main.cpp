@@ -1,5 +1,7 @@
 #include <iostream>
 #include<string>
+#include<stdlib.h>
+#include<time.h>
 using namespace std;
 
 class Pokemon
@@ -45,25 +47,25 @@ class Fire: public Pokemon
     }
     void getName()
     {
-        cout<<this->Name<<endl;
+        cout<<"Name: "<<this->Name<<endl;
     }
     void getHealth()
     {
-        cout<<this->Health<<endl;
+        cout<<"Health: "<<this->Health<<endl;
     }
     void getType()
     {
-        cout<<this->Type<<endl;
+        cout<<"Type: "<<this->Type<<endl;
     }
     
     void getAttack_names()
     {
-        cout<<Attack_names[0]<<" "<<Attack_names[1]<<" "<<Attack_names[2]<<" "<<Attack_names[3]<<endl;
+        cout<<"Attack names: "<<Attack_names[0]<<" "<<Attack_names[1]<<" "<<Attack_names[2]<<" "<<Attack_names[3]<<endl;
     }
     
     void getAttack_powers()
     {
-        cout<<Attack_powers[0]<<" "<<Attack_powers[1]<<" "<<Attack_powers[2]<<" "<<Attack_powers[3]<<endl;
+        cout<<"Attack powers: "<<Attack_powers[0]<<" "<<Attack_powers[1]<<" "<<Attack_powers[2]<<" "<<Attack_powers[3]<<endl;
     }
     void getDetails()
     {
@@ -72,6 +74,36 @@ class Fire: public Pokemon
         this->getType();
         this->getAttack_names();
         this->getAttack_powers();
+        cout<<endl;
+    }
+    
+    int chooseAttack()
+    {
+        int random=rand()%4;
+        cout<<this->Name<<" attacked with "<<this->Attack_names[random]<<"!"<<endl<<endl;
+        return this->Attack_powers[random];
+    }
+    
+    void onAttack(int power)
+    {
+        if(power<this->Health)
+        {
+            this->Health=this->Health-power;
+            if(this->Health==0)
+            {
+                cout<<this->Name<<"'s health reduced to "<<this->Health<<endl<<endl;
+                exit(0);
+            }
+
+        }
+        else
+        {
+            this->Health=0;
+            cout<<this->Name<<" lost the battle!"<<endl;
+            exit(0);
+        }
+        
+        cout<<this->Name<<"'s health reduced to "<<this->Health<<endl;
     }
     
 };
@@ -104,25 +136,25 @@ class Water: public Pokemon
     }
     void getName()
     {
-        cout<<this->Name<<endl;
+        cout<<"Name: "<<this->Name<<endl;
     }
     void getHealth()
     {
-        cout<<this->Health<<endl;
+        cout<<"Health: "<<this->Health<<endl;
     }
     void getType()
     {
-        cout<<this->Type<<endl;
+        cout<<"Type: "<<this->Type<<endl;
     }
     
     void getAttack_names()
     {
-        cout<<Attack_names[0]<<" "<<Attack_names[1]<<" "<<Attack_names[2]<<" "<<Attack_names[3]<<endl;
+        cout<<"Attack names: "<<Attack_names[0]<<" "<<Attack_names[1]<<" "<<Attack_names[2]<<" "<<Attack_names[3]<<endl;
     }
     
     void getAttack_powers()
     {
-        cout<<Attack_powers[0]<<" "<<Attack_powers[1]<<" "<<Attack_powers[2]<<" "<<Attack_powers[3]<<endl;
+        cout<<"Attack powers: "<<Attack_powers[0]<<" "<<Attack_powers[1]<<" "<<Attack_powers[2]<<" "<<Attack_powers[3]<<endl;
     }
     void getDetails()
     {
@@ -131,7 +163,38 @@ class Water: public Pokemon
         this->getType();
         this->getAttack_names();
         this->getAttack_powers();
+        cout<<endl;
     }
+    
+    int chooseAttack()
+    {
+        int random=rand()%4;
+        cout<<this->Name<<" attacked with "<<this->Attack_names[random]<<"!"<<endl<<endl;
+        return this->Attack_powers[random];
+    }
+    
+    void onAttack(int power)
+    {
+        if(power<this->Health)
+        {
+            this->Health=this->Health-power;
+            if(this->Health==0)
+            {
+                cout<<this->Name<<"'s health reduced to "<<this->Health<<endl<<endl;
+                exit(0);
+            }
+
+        }
+        else
+        {
+            this->Health=0;
+            cout<<this->Name<<" lost the battle!"<<endl;
+            exit(0);
+        }
+        
+        cout<<this->Name<<"'s health reduced to "<<this->Health<<endl;
+    }
+    
     
 };
 
@@ -161,27 +224,27 @@ class Grass: public Pokemon
         this->Attack_powers[3]=power4;
         
     }
-    void getName()
+     void getName()
     {
-        cout<<this->Name<<endl;
+        cout<<"Name: "<<this->Name<<endl;
     }
     void getHealth()
     {
-        cout<<this->Health<<endl;
+        cout<<"Health: "<<this->Health<<endl;
     }
     void getType()
     {
-        cout<<this->Type<<endl;
+        cout<<"Type: "<<this->Type<<endl;
     }
     
     void getAttack_names()
     {
-        cout<<Attack_names[0]<<" "<<Attack_names[1]<<" "<<Attack_names[2]<<" "<<Attack_names[3]<<endl;
+        cout<<"Attack names: "<<Attack_names[0]<<" "<<Attack_names[1]<<" "<<Attack_names[2]<<" "<<Attack_names[3]<<endl;
     }
     
     void getAttack_powers()
     {
-        cout<<Attack_powers[0]<<" "<<Attack_powers[1]<<" "<<Attack_powers[2]<<" "<<Attack_powers[3]<<endl;
+        cout<<"Attack powers: "<<Attack_powers[0]<<" "<<Attack_powers[1]<<" "<<Attack_powers[2]<<" "<<Attack_powers[3]<<endl;
     }
    void getDetails()
     {
@@ -190,20 +253,64 @@ class Grass: public Pokemon
         this->getType();
         this->getAttack_names();
         this->getAttack_powers();
+        cout<<endl;
     }
+    
+    int chooseAttack()
+    {
+        int random=rand()%4;
+        cout<<this->Name<<" attacked with "<<this->Attack_names[random]<<"!"<<endl<<endl;
+        return this->Attack_powers[random];
+    }
+    
+    void onAttack(int power)
+    {
+        if(power<this->Health)
+        {
+            this->Health=this->Health-power;
+            if(this->Health==0)
+            {
+                cout<<this->Name<<"'s health reduced to "<<this->Health<<endl<<endl;
+                exit(0);
+            }
+
+        }
+        else
+        {
+            this->Health=0;
+            cout<<this->Name<<" lost the battle!"<<endl;
+            exit(0);
+        }
+        
+        cout<<this->Name<<"'s health reduced to "<<this->Health<<endl;
+    }
+    
     
 };
 
 int main()
 {
+    srand(time(0));
     Fire charizard("Charizard");
     charizard.setAttack_names();
     charizard.setAttack_powers();
     charizard.getDetails();
-    cout<<endl;
-
-
     Water blastoise("Blastoise");
+    blastoise.setAttack_names();
+    blastoise.setAttack_powers();
+    blastoise.getDetails();
+    
+    while(true)
+    {
+        blastoise.onAttack(charizard.chooseAttack());
+        charizard.onAttack(blastoise.chooseAttack());
+    }
+    
+    
+    
+
+
+    /*Water blastoise("Blastoise");
     blastoise.setAttack_names();
     blastoise.setAttack_powers();
     blastoise.getDetails();
@@ -214,7 +321,7 @@ int main()
     venasaur.setAttack_names();
     venasaur.setAttack_powers();
     venasaur.getDetails();
-    cout<<endl;
+    cout<<endl;*/
 
 
 
