@@ -1,8 +1,8 @@
 # UTA_Pokemon
 A basic game developed to illustrate OOP concepts for the course CSE1002 -Object Oriented Programming in C++ for which I am a Teaching Assistant
 
-## STRUCTURE V1
-This is the first basic boilerplate version.
+## STRUCTURE V2
+This is the second version built on the boilerplate version.
 
 ## Overview
 
@@ -27,11 +27,12 @@ All these classes have methods to set attack names and powers. However since it'
 
 
 ## Future Work
-
-This is the basic set up, now we must add a function in each derived class which **randomly** selects an attack from it's list and returns the attack power. We will call this ``` int attack() ```. And in addition all the derived classes must have a function 
+**IMPLEMENTED IN V2**
+This is the basic set up, now we must add a function in each derived class which **randomly** selects an attack from it's list and returns the attack power. We will call this ``` int attack() ```. And in addition all the derived classes must have a function  
 
 ```void onAttack(int power)``` which deducts the power from ```this->health``` on being attacked.
 
+**PENDING**
 Keep thinking of additional features like **type advantages** for example fire should be at a disadvantage against water.
 
 We can also add levels to Pokemon to make sure some attacks are stronger at higher levels.
