@@ -80,6 +80,14 @@ class Fire: public Pokemon
     int chooseAttack()
     {
         int random=rand()%4;
+        //code for critical hit
+	int critical = rand()%5;
+	if (critical==1)
+	{
+		cout<<"CRITICAL HIT: "<<this->Name<<" attacked with "<<this->Attack_names[random]<<"!"<<endl<<endl;
+		return this->Attack_powers[random]*2;
+	}
+	//over
         cout<<this->Name<<" attacked with "<<this->Attack_names[random]<<"!"<<endl<<endl;
         return this->Attack_powers[random];
     }
@@ -169,6 +177,14 @@ class Water: public Pokemon
     int chooseAttack()
     {
         int random=rand()%4;
+        //code for critical hit
+	int critical = rand()%5;
+	if (critical==1)
+	{
+		cout<<"CRITICAL HIT: "<<this->Name<<" attacked with "<<this->Attack_names[random]<<"!"<<endl<<endl;
+		return this->Attack_powers[random]*2;
+	}
+	//over
         cout<<this->Name<<" attacked with "<<this->Attack_names[random]<<"!"<<endl<<endl;
         return this->Attack_powers[random];
     }
@@ -259,6 +275,14 @@ class Grass: public Pokemon
     int chooseAttack()
     {
         int random=rand()%4;
+	//code for critical hit
+	int critical = rand()%5;
+	if (critical==1)
+	{
+		cout<<"CRITICAL HIT: "<<this->Name<<" attacked with "<<this->Attack_names[random]<<"!"<<endl<<endl;
+		return this->Attack_powers[random]*2;
+	}
+	//over
         cout<<this->Name<<" attacked with "<<this->Attack_names[random]<<"!"<<endl<<endl;
         return this->Attack_powers[random];
     }
